@@ -560,3 +560,565 @@ func Uint64c(a interface{}) (i uint64) {
 	}
 	return
 }
+
+//Scontains return if there is in slice
+func Scontains(a interface{}, b interface{}) (i bool) {
+	switch c := a.(type) {
+	case []string:
+		d := b.(string)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	case []int:
+		d := b.(int)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	case []bool:
+		d := b.(bool)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	case []int8:
+		d := b.(int8)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	case []int16:
+		d := b.(int16)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	case []int32:
+		d := b.(int32)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	case []int64:
+		d := b.(int64)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	case []uint8:
+		d := b.(uint8)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	case []uint16:
+		d := b.(uint16)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	case []uint32:
+		d := b.(uint32)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	case []uint64:
+		d := b.(uint64)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	case []float32:
+		d := b.(float32)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	case []float64:
+		d := b.(float64)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	case []complex64:
+		d := b.(complex64)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	case []complex128:
+		d := b.(complex128)
+		for _, x := range c {
+			if x == d {
+				i = true
+				break
+			}
+		}
+	default:
+		i = false
+	}
+	return
+}
+
+//Sindex returns index of passed value
+func Sindex(a interface{}, b interface{}) (i int) {
+	//-1 return means not found
+	//the function will panic if a and b whose type are different.
+	i = -1
+	switch c := a.(type) {
+	case []string:
+		d := b.(string)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []int:
+		d := b.(int)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []bool:
+		d := b.(bool)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []int8:
+		d := b.(int8)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []int16:
+		d := b.(int16)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []int32:
+		d := b.(int32)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []int64:
+		d := b.(int64)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []uint:
+		d := b.(uint)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []uint8:
+		d := b.(uint8)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []uint16:
+		d := b.(uint16)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []uint32:
+		d := b.(uint32)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []uint64:
+		d := b.(uint64)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []float32:
+		d := b.(float32)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []float64:
+		d := b.(float64)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []complex64:
+		d := b.(complex64)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	case []complex128:
+		d := b.(complex128)
+		for y, x := range c {
+			if x == d {
+				i = y
+				break
+			}
+		}
+	default:
+		i = -1
+	}
+	return
+}
+
+//Slastindex returns index of passed value
+func Slastindex(a interface{}, b interface{}) (i int) {
+	//-1 return means not found
+	//the function will panic if a and b whose type are different.
+	i = -1
+	switch c := a.(type) {
+	case []string:
+		d := b.(string)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []int:
+		d := b.(int)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []bool:
+		d := b.(bool)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []int8:
+		d := b.(int8)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []int16:
+		d := b.(int16)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []int32:
+		d := b.(int32)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []int64:
+		d := b.(int64)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []uint:
+		d := b.(uint)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []uint8:
+		d := b.(uint8)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []uint16:
+		d := b.(uint16)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []uint32:
+		d := b.(uint32)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []uint64:
+		d := b.(uint64)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []float32:
+		d := b.(float32)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []float64:
+		d := b.(float64)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []complex64:
+		d := b.(complex64)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	case []complex128:
+		d := b.(complex128)
+		index := len(c) - 1
+		for index >= 0 {
+			if c[index] == d {
+				i = index
+				break
+			}
+			index = index - 1
+		}
+	default:
+		i = -1
+	}
+	return
+}
+
+//Scount returns how many passed value
+func Scount(a interface{}, b interface{}) (i int) {
+	switch c := a.(type) {
+	case []string:
+		d := b.(string)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []int:
+		d := b.(int)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []bool:
+		d := b.(bool)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []int8:
+		d := b.(int8)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []int16:
+		d := b.(int16)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []int32:
+		d := b.(int32)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []int64:
+		d := b.(int64)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []uint:
+		d := b.(uint)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []uint8:
+		d := b.(uint8)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []uint16:
+		d := b.(uint16)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []uint32:
+		d := b.(uint32)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []uint64:
+		d := b.(uint64)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []float32:
+		d := b.(float32)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []float64:
+		d := b.(float64)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []complex64:
+		d := b.(complex64)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	case []complex128:
+		d := b.(complex128)
+		for _, x := range c {
+			if x == d {
+				i = i + 1
+			}
+		}
+	default:
+		i = 0
+	}
+	return
+}
